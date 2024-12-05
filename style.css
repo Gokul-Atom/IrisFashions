@@ -1,0 +1,251 @@
+:root {
+  --navbar-height: 60px;
+  --hsl-clr-1: 297, 31%, 50%;
+  --hsl-clr-2: 297, 31%, 90%;
+  --rgb-clr-1: 163, 88, 167;
+}
+
+.box-content {
+  width: min(100%, 1200px);
+  margin-top: 4rem;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: hsl(297, 100%, 70%);
+  width: min(15vw, 70px);
+  height: min(15vw, 70px);
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 4px 2px solid hsl(297, 100%, 80%);
+}
+
+.mute {
+  opacity: 0.5;
+}
+
+.btn-1 {
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: hsl(var(--hsl-clr-1));
+  padding: 0.5rem 1rem;
+  border-radius: 50rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-1:hover {
+  background-color: hsl(297, 100%, 70%);
+}
+
+/* navbar */
+.offcanvas-body {
+  background-color: hsl(0, 0%, 20%);
+}
+
+.navbar {
+  height: var(--navbar-height);
+}
+
+/* hero-carousel */
+#hero-carousel .carousel-item img {
+  max-height: calc(100dvh - var(--navbar-height));
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  object-position: top;
+  filter: brightness(0.7);
+}
+
+.carousel-caption {
+  /* margin-bottom: 0.5rem;
+  background-color: hsla(var(--hsl-clr-1), 20%);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 2px 2px 6px hsl(297, 31%, 65%),
+    inset -2px -2px 4px hsl(297, 31%, 80%); */
+}
+
+.carousel-caption h5 {
+  pointer-events: none;
+}
+
+.carousel-indicators [data-bs-target] {
+  aspect-ratio: 1;
+  height: 5px;
+  width: 5px;
+  border: 1px solid white;
+  background-color: hsl(297, 100%, 70%);
+  border-radius: 50%;
+}
+
+/* bestsellers */
+.bestsellers .row > div {
+  padding: calc(var(--bs-gutter-x) * 0.5);
+}
+.product-card {
+  border: 1px solid hsl(var(--hsl-clr-2));
+  background-color: hsl(var(--hsl-clr-2));
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--bs-dark);
+  box-shadow: 0 0 2px 0px hsla(0, 0%, 50%, 0.5);
+}
+
+.product-card:hover {
+  box-shadow: 0 0 6px 2px hsla(0, 0%, 50%, 0.5);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.02);
+  transform-origin: top;
+}
+
+.product-name {
+  margin-top: 1rem;
+}
+
+.product-image,
+.category-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: top;
+}
+
+.product-card .mrp,
+.product-card .sp,
+.product-card .discount {
+  font-weight: bold;
+}
+
+.product-card .discount {
+  color: hsl(82, 77%, 31%);
+}
+
+.product-card .mrp::before,
+.product-card .sp::before {
+  content: "₹ ";
+}
+
+.product-card .discount:after {
+  content: " % OFF";
+  font-size: 0.7em;
+}
+
+.product-card .sp + .mrp {
+  opacity: 0.5;
+  font-size: 0.9em;
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+.product-card .price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* shop-by-category */
+.category .row > div {
+  padding: calc(var(--bs-gutter-x) * 0.5);
+}
+
+.category-name {
+  color: var(--bs-dark);
+  padding: 0.5rem 0;
+  font-weight: 500;
+}
+
+.category-card {
+  border: 1px solid hsl(var(--hsl-clr-2));
+  background-color: hsl(var(--hsl-clr-2));
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 2px 0px hsla(0, 0%, 50%, 0.5);
+}
+
+.category-card:hover {
+  box-shadow: 0 0 6px 2px hsla(0, 0%, 50%, 0.5);
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.02);
+  transform-origin: top;
+}
+
+/* reviews */
+.review-card {
+  display: flex;
+  flex-direction: column;
+  width: min(90%, 600px);
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  min-height: 350px;
+  background-color: hsl(0, 0%, 90%);
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.review-card .profile {
+  border-radius: 50rem;
+  height: 100px;
+  width: 100px;
+  border: 2px solid hsl(297, 100%, 70%);
+  overflow: hidden;
+}
+
+.review-card .profile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.review-card .profile {
+  background-color: hsl(0, 0%, 90%);
+  position: relative;
+}
+
+.review-card .profile span {
+  color: var(--bs-dark);
+  font-weight: 500;
+  font-size: 4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* about irisfashions */
+.if > div > div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.if img {
+  width: 100px;
+}
+
+@media screen and (min-width: 992px) {
+  /* navbar */
+  .offcanvas-body {
+    background-color: unset;
+  }
+  /* hero-carousel */
+  .carousel-caption {
+    padding-bottom: 2rem;
+  }
+  .carousel-caption h5 {
+    margin-bottom: 1.5rem;
+  }
+}
